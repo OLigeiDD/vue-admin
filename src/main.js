@@ -1,10 +1,19 @@
-import Vue from 'vue'
-import App from './App.vue'
-import store from './store'
+import Vue from "vue";
+import App from "./App.vue";
+import router from "./routers";
 
-Vue.config.productionTip = false
+// 路由守卫,权限控制
+import "./permission";
+import "./icons";
+import "normalize/normalize.css";
+
+// 导入elementUI
+import ElementUI from "element-ui";
+
+Vue.use(ElementUI);
+Vue.config.productionTip = false;
 
 new Vue({
-  store,
+  router,
   render: h => h(App)
-}).$mount('#app')
+}).$mount("#app");
