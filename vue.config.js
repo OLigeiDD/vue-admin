@@ -5,6 +5,14 @@ function resolve(dir) {
 }
 
 module.exports = {
+  devServer: {
+    host: '0.0.0.0',
+    port: 8080, // 指定 devServer 启动的端口
+    hot: true,
+    inline: true,
+    disableHostCheck: true, // 必须
+    public: '0.0.0.0:0', // 必须
+  },
   chainWebpack(config) {
     // svg-sprite-loader导入svg
     config.module
